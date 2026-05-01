@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FotoScanSend</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>FotoScanSend</h1>
+      <p class="subtitle">Fotos aufnehmen und als PDF senden</p>
+
+      <div class="meta-grid">
+        <label>
+          Kunde
+          <input id="customerInput" type="text" placeholder="z. B. Muster GmbH" maxlength="80" />
+        </label>
+        <label>
+          Aktennummer
+          <input id="caseNumberInput" type="text" placeholder="z. B. AKT-2026-001" maxlength="80" />
+        </label>
+      </div>
+
+      <div class="controls-row">
+        <select id="cameraSelect" aria-label="Kamera auswählen"></select>
+        <button id="switchBtn" type="button">Kamera aktivieren</button>
+      </div>
+
+      <video id="video" autoplay playsinline></video>
+
+      <div class="actions">
+        <button id="captureBtn" type="button">Foto aufnehmen</button>
+        <button id="sendBtn" type="button" class="primary">Senden</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <h2>Vorschau</h2>
+      <div id="gallery" class="gallery"></div>
+
+      <h2>Upload-Historie</h2>
+      <ul id="historyList" class="history-list"></ul>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

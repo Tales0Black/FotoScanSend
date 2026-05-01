@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: fotoscansend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: TO_EMAIL
+        value: info@agc-schwaben.de
+      - key: FROM_EMAIL
+        value: Scan Bot <scan@example.com>
